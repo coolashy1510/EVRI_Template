@@ -1,0 +1,15 @@
+metadata: {}
+version: v1.0.0
+spec:
+  category: cnt1
+  gitSha: ${GIT_COMMIT}
+  gitRepo: ${GIT_URL}
+  chartName: kps-chart
+  chartVersion: 2.3.1
+  namespace: pricing
+  appName: ${APP_NAME}
+  appVersion: ${APP_VERSION}
+  components:
+    repo: docker-ksp-pricing-system
+    images:
+      - ${APP_IMAGE}
