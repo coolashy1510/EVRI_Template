@@ -1,1 +1,0 @@
-create index proposition_placeholder_proposition_id_index on pricing_entity.proposition_placeholder using hash(proposition_id);

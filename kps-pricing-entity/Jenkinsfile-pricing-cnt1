@@ -1,6 +1,0 @@
-@Library('jenkins-kps-library@KPS-1553-kps-chart-support')_
-
-kpsMavenAppPipeline {
-  javaVersion = 21
-}
-    

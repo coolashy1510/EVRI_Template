@@ -1,6 +1,0 @@
-*.iml
-.idea/
-*/target/
-target/
-debug.log
-Dockerfile

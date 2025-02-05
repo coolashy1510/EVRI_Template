@@ -1,1 +1,0 @@
-create index start_date_time_idx on pricing_entity.contest (start_date_time);
