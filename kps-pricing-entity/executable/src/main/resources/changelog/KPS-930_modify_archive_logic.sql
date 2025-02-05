@@ -1,0 +1,1 @@
+alter table pricing_entity.archived_contest add column if not exists start_date_time timestamptz;

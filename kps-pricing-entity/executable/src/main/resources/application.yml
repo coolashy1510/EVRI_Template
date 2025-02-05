@@ -1,0 +1,39 @@
+datasource:
+  hostname: ${PG_HOST}
+  port: ${PG_PORT}
+  db: ${PG_DATABASE}
+  username: ${PG_USERNAME}
+  password: ${PG_PASSWORD}
+
+liquibase:
+  changeLogFile: 'kps-pricing-entity-master.xml'
+
+spring:
+  application:
+    name: pricing-entity
+  liquibase:
+    enabled: false
+  datasource:
+    hikari:
+      minimumIdle: 20
+      maximumPoolSize: 60
+      idleTimeout: 3600
+      poolName: pricingEntityPool
+      connection-timeout: 60000
+
+
+jetty:
+  thread-pool:
+    max-threads: 80
+    min-threads: 10
+
+otel:
+  metrics:
+    exporter: none
+  logs:
+    exporter: none
+
+telemetry:
+  exporter:
+    grpc:
+      enabled: true

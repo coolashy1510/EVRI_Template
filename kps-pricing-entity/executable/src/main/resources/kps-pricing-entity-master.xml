@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="KPS-61" author="mykshv">
+        <sqlFile path="changelog/KPS-61_baseline_create_core_entity_tables.sql"/>
+    </changeSet>
+    <changeSet id="KPS-279" author="ivacor">
+        <sqlFile path="changelog/KPS-279_Recreate-liquibase-scripts.sql"/>
+    </changeSet>
+    <changeSet id="KPS-385" author="mykshv">
+        <sqlFile path="changelog/KPS-385_add_proposition_placeholders.sql"/>
+    </changeSet>
+    <changeSet id="KPS-419" author="bercop">
+        <sqlFile path="changelog/KPS-419-add-indexes-to-FKs.sql"/>
+    </changeSet>
+    <changeSet id="KPS-408-0" author="bercop">
+        <sqlFile path="changelog/KPS-408_0.sql"/>
+    </changeSet>
+    <changeSet id="KPS-408" author="ivacor">
+        <sqlFile path="changelog/KPS-408_add_timestamp_to_entities.sql"/>
+    </changeSet>
+    <changeSet id="KPS-408-1" author="ivacor">
+        <sqlFile path="changelog/KPS-408_1_archive_outdated_data.sql"/>
+    </changeSet>
+    <changeSet id="KPS-408-2" author="ivacor">
+        <sqlFile path="changelog/KPS-408_2_change_archive_to_procedure.sql"/>
+    </changeSet>
+    <changeSet id="KPS-563" author="emmsek">
+        <sqlFile path="changelog/KPS-563-consume-outcome-results-events.sql"/>
+    </changeSet>
+    <changeSet id="KPS-507" author="bercop">
+        <sqlFile path="changelog/KPS-507-drop-constraints.sql"/>
+    </changeSet>
+    <changeSet id="KPS-630" author="mykshv">
+        <sqlFile path="changelog/KPS-630_shedlock.sql"/>
+    </changeSet>
+    <changeSet id="KPS-630-1" author="mykshv">
+        <sqlFile path="changelog/KPS-630_1_remove_procedure.sql"/>
+    </changeSet>
+    <changeSet id="KPS-630-2" author="mykshv">
+        <sqlFile path="changelog/KPS-630_2_cascade_all_foreign_keys.sql"/>
+    </changeSet>
+    <changeSet id="KPS-762" author="ivacor">
+        <sqlFile path="changelog/KPS-762_archived_outcome_table.sql"/>
+    </changeSet>
+    <changeSet id="KPS-930-1" author="ivacor">
+        <sqlFile path="changelog/KPS-930_1_add_start_date_time_column.sql"/>
+    </changeSet>
+    <changeSet id="KPS-930" author="ivacor">
+        <sqlFile path="changelog/KPS-930_modify_archive_logic.sql"/>
+    </changeSet>
+    <changeSet id="KPS-930-2" author="ivacor">
+        <sqlFile path="changelog/KPS-930_2_add_start_date_time_index.sql"/>
+    </changeSet>
+    <changeSet id="KPS-985" author="hemmak">
+        <sqlFile path="changelog/KPS-985_add_option_entity.sql"/>
+    </changeSet>
+    <changeSet id="KPS-985-2" author="hemmak">
+        <sqlFile path="changelog/KPS-985_2_alter_indexes.sql"/>
+    </changeSet>
+    <changeSet id="KPS-1024" author="mykshv">
+        <sqlFile path="changelog/KPS-1024_restore_dropped_index.sql"/>
+    </changeSet>
+    <changeSet id="KPS-1109" author="ivacor">
+        <sqlFile path="changelog/KPS-1109_Resolve_corrupted_contests.sql"/>
+    </changeSet>
+    <changeSet id="KPS-1547" author="hemmak">
+        <sqlFile path="changelog/KPS-1547_archived_contest_index.sql"/>
+    </changeSet>
+    <changeSet id="KPS-1547-2" author="hemmak">
+        <sqlFile path="changelog/KPS-1547_2_archived_contest_index.sql"/>
+    </changeSet>
+    <changeSet id="KPS-1567" author="firali">
+        <sqlFile path="changelog/KPS-1567_drop_triggers_and_trigger_function.sql"/>
+    </changeSet>
+</databaseChangeLog>
