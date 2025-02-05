@@ -1,0 +1,35 @@
+bootstrap.servers: ${KAFKA_BOOTSTRAP_SERVERS}
+kafka.port: ${KAFKA_PORT}
+
+group.id: pricing-entity
+request.timeout.ms: 120000
+auto.offset.reset: earliest
+enable.auto.commit: false
+sasl.jaas.config: org.apache.kafka.common.security.scram.ScramLoginModule required username='${KAFKA_USERNAME}' password='${KAFKA_PASSWORD}';
+
+http:
+  entity-manager:
+    url: ${ENTITY_MANAGER_API_URL}
+
+scheduled:
+  corruptedData: ${ARCHIVE_CORRUPTED_DATA} # run every day by default
+  archive:
+    bulk-limit: ${ARCHIVE_BULK_LIMIT} # default 30
+    outdatedData: ${ARCHIVE_PERIOD_MINUTES} # run every N minutes (default 5)
+    lock-at-most-for: ${ARCHIVE_LOCK_MAX_DURATION} # let other pods try to archive (default after 5 minutes)
+    lock-at-least-for: 10s
+  deleteArchive:
+    bulk-limit: ${DELETE_ARCHIVE_BULK_LIMIT} # default 100
+    frequency: ${DELETE_ARCHIVE_PERIOD_MINUTES} # run every N minutes (default 30)
+  savePCC:
+    lock-at-most-for: ${SAVE_PCC_LOCK_MAX_DURATION} # let other pods try to archive (default after 1 minute)
+    lock-at-least-for: 10s
+base:
+  otel:
+    service:
+      trace:
+        enable: true
+
+spring:
+  config:
+    import: "optional:file:/etc/kps-config/kps-config.yaml"

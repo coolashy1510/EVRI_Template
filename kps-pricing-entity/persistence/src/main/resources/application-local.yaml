@@ -1,0 +1,12 @@
+datasource:
+  username: postgres
+  password: postgres
+  db: kps_pricing_entity
+  hostname: localhost
+  port: 5432
+
+spring:
+  datasource:
+    hikari:
+      minimumIdle: 2
+      maximumPoolSize: 20
