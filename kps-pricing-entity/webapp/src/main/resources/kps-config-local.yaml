@@ -1,0 +1,24 @@
+topic.env.prefix: int
+consumer.concurrency: 100
+message.buffer.size: 3200
+max.poll.records: 100
+fetch.min.bytes: 262144
+max.partition.fetch.bytes: 3072000
+max.poll.interval.ms: 600000
+fetch.max.wait.ms: 5000
+message:
+  routing:
+    Contest:
+      majorVersion: 1
+      outputTopic: pricing.pricing_domain
+    Proposition:
+      majorVersion: 2
+      outputTopic: pricing.pricing_domain
+    OptionChanged:
+      majorVersion: 1
+    VariantChanged:
+      majorVersion: 1
+    OutcomeResult:
+      majorVersion: 1
+    PriceChangedCollection:
+      majorVersion: 1

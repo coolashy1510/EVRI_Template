@@ -1,0 +1,29 @@
+spring:
+  cloud:
+    function:
+      definition: functionRouter;produceContest;produceProposition;producePriceChangedCollectionEnriched
+    stream:
+      bindings:
+        functionRouter-in-0:
+          destination: local.test.feed_domain
+          binder: kafka
+          group: pricing-entity
+          content-type: application/json
+        produceContest-out-0:
+          destination: local.test.pricing.pricing_domain
+          binder: kafka
+          content-type: application/json
+        produceProposition-out-0:
+          destination: local.test.pricing.pricing_domain
+          binder: kafka
+          content-type: application/json
+        producePriceChangedCollectionEnriched-out-0:
+          destination: local.test.pricing.pricing_domain
+          binder: kafka
+          content-type: application/json
+      kafka:
+        bindings:
+          functionRouter-in-0:
+            consumer:
+              configuration:
+                value.deserializer: org.apache.kafka.common.serialization.StringDeserializer

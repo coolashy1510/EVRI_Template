@@ -1,0 +1,39 @@
+bootstrap.servers: kb001.ksp-cnt1-int.syd1.kc.thinkbig.local,kb002.ksp-cnt1-int.syd1.kc.thinkbig.local,kb003.ksp-cnt1-int.syd1.kc.thinkbig.local,kb004.ksp-cnt1-int.syd1.kc.thinkbig.local,kb005.ksp-cnt1-int.syd1.kc.thinkbig.local
+kafka.port: 9092
+
+group.id: ak_test-pricing-entity
+request.timeout.ms: 360000
+auto.offset.reset: earliest
+enable.auto.commit: false
+sasl.jaas.config: org.apache.kafka.common.security.scram.ScramLoginModule required username='kps-pricing-entity' password='wagd03sevdjxzgZK2WgwMAYKGWwZn8hU';
+
+http:
+  entity-manager:
+    url: https://k8s-int.unibet.com.au/feed-entity-manager/
+
+scheduled:
+  corruptedData: 1
+  archive:
+    bulk-limit: 11
+    outdatedData: 1
+    lock-at-most-for: 1m
+    lock-at-least-for: 2s
+  deleteArchive:
+    bulk-limit: 100
+    frequency: 30
+  savePCC:
+    lock-at-most-for: 15s
+    lock-at-least-for: 2s
+telemetry:
+  exporter:
+    console:
+      enabled: true
+base:
+  otel:
+    service:
+      trace:
+        enable: true
+
+spring:
+  config:
+    import: "classpath:./kps-config-local.yaml"
